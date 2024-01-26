@@ -82,6 +82,9 @@ app.use('/sell',upload.single('image'),sellRoute);
 app.get('/edit',function(req,res){
   res.render('editProfile')
 });
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'views', 'index.ejs'));
+});
 app.get('/register',function(req,res){
   res.render('registers')
 });
